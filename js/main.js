@@ -62,24 +62,37 @@
     }, { threshold: 0.15 });
     vids.forEach(function (v) { vo.observe(v); });
   }
-  /* Clip control: data-start / data-end trim the loop (in seconds) and
-     data-rates sets playback speed per stretch, e.g. "4.4:0.2,6:0.4" means
-     20% speed from 4.4s, then 40% from 6s. */
-  document.querySelectorAll('video[data-start], video[data-rates]').forEach(function (v) {
-    var start = parseFloat(v.getAttribute('data-start')) || 0;
-    var rates = (v.getAttribute('data-rates') || '').split(',').filter(Boolean).map(function (pair) {
-      var bits = pair.split(':'); return { from: parseFloat(bits[0]), rate: parseFloat(bits[1]) };
-    }).sort(function (a, b) { return a.from - b.from; });
-    var setRate = function () {
-      var r = 1;
-      rates.forEach(function (seg) { if (v.currentTime >= seg.from - 0.01) r = seg.rate; });
-      if (v.playbackRate !== r) v.playbackRate = r;
+  /* Clip playlist: data-segments="from-to@speed, ..." plays those stretches of
+     the clip in order at those speeds, then loops. Used to start the momo reel
+     on momo, skip an off-centre shot and the end card, and slow the fast cuts. */
+  document.querySelectorAll('video[data-segments]').forEach(function (v) {
+    var segs = v.getAttribute('data-segments').split(',').map(function (part) {
+      var m = part.trim().match(/^([\d.]+)-([\d.]+)@([\d.]+)$/);
+      return m && { from: parseFloat(m[1]), to: parseFloat(m[2]), rate: parseFloat(m[3]) };
+    }).filter(Boolean);
+    if (!segs.length) return;
+    var i = 0;
+    var enter = function (n, seek) {
+      i = n;
+      if (seek) v.currentTime = segs[i].from;
+      v.playbackRate = segs[i].rate;
     };
-    var toStart = function () { if (v.currentTime < start) v.currentTime = start; setRate(); };
-    v.addEventListener('loadedmetadata', toStart);
-    if (v.readyState >= 1) toStart();
-    v.addEventListener('timeupdate', setRate);
-    v.addEventListener('play', setRate);
+    var check = function () {
+      if (v.currentTime < segs[i].to - 0.03) { if (v.playbackRate !== segs[i].rate) v.playbackRate = segs[i].rate; return; }
+      var next = (i + 1) % segs.length;
+      var wasPlaying = !v.paused;
+      // only seek when the next stretch doesn't carry straight on from this one
+      enter(next, Math.abs(segs[next].from - segs[i].to) > 0.05);
+      if (wasPlaying) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    };
+    var start = function () { enter(0, true); };
+    if (v.readyState >= 1) start(); else v.addEventListener('loadedmetadata', start, { once: true });
+    if ('requestVideoFrameCallback' in v) {
+      var onFrame = function () { check(); v.requestVideoFrameCallback(onFrame); };
+      v.requestVideoFrameCallback(onFrame);
+    }
+    v.addEventListener('timeupdate', check);
+    v.addEventListener('play', function () { v.playbackRate = segs[i].rate; });
   });
 
     /* Some clips end on a contact card: loop them before it (data-end, in seconds) */
