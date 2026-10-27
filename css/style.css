@@ -521,6 +521,13 @@ address { font-style: normal; }
   }
   .nav a { font-family: var(--serif); font-size: 34px; letter-spacing: .04em; text-transform: none; }
   .nav .nav-extra { display: block; }
+  .nav .nav-desk { display: none; }
+  .nav .nav-call {
+    margin-top: 14px; padding: 16px 34px; background: var(--gold); color: var(--black);
+    font-family: var(--sans); font-size: 15px; letter-spacing: .14em; text-transform: uppercase;
+  }
+  .nav .nav-call::after { display: none; }
+  .nav .nav-call:hover { color: var(--black); background: var(--gold-light); }
   .nav-open .nav { opacity: 1; visibility: visible; }
   .nav-open .site-header { background-color: var(--black); }
 
@@ -549,7 +556,7 @@ address { font-style: normal; }
   .site-footer { padding-bottom: 80px; }
 }
 
-@media (min-width: 901px) { .nav .nav-extra { display: none; } }
+@media (min-width: 901px) { .nav .nav-extra, .nav .nav-extra-inline { display: none; } }
 
 @media (max-width: 560px) {
   body { font-size: 16px; }
