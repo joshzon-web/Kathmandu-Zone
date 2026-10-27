@@ -62,19 +62,36 @@
     }, { threshold: 0.15 });
     vids.forEach(function (v) { vo.observe(v); });
   }
-  /* Slower playback where asked (data-rate) */
-  document.querySelectorAll('video[data-rate]').forEach(function (v) {
-    var rate = parseFloat(v.getAttribute('data-rate'));
-    var apply = function () { v.defaultPlaybackRate = rate; v.playbackRate = rate; };
-    apply();
-    v.addEventListener('loadedmetadata', apply);
-    v.addEventListener('play', apply);
+  /* Clip control: data-start / data-end trim the loop (in seconds) and
+     data-rates sets playback speed per stretch, e.g. "4.4:0.2,6:0.4" means
+     20% speed from 4.4s, then 40% from 6s. */
+  document.querySelectorAll('video[data-start], video[data-rates]').forEach(function (v) {
+    var start = parseFloat(v.getAttribute('data-start')) || 0;
+    var rates = (v.getAttribute('data-rates') || '').split(',').filter(Boolean).map(function (pair) {
+      var bits = pair.split(':'); return { from: parseFloat(bits[0]), rate: parseFloat(bits[1]) };
+    }).sort(function (a, b) { return a.from - b.from; });
+    var setRate = function () {
+      var r = 1;
+      rates.forEach(function (seg) { if (v.currentTime >= seg.from - 0.01) r = seg.rate; });
+      if (v.playbackRate !== r) v.playbackRate = r;
+    };
+    var toStart = function () { if (v.currentTime < start) v.currentTime = start; setRate(); };
+    v.addEventListener('loadedmetadata', toStart);
+    if (v.readyState >= 1) toStart();
+    v.addEventListener('timeupdate', setRate);
+    v.addEventListener('play', setRate);
   });
 
     /* Some clips end on a contact card: loop them before it (data-end, in seconds) */
   document.querySelectorAll('video[data-end]').forEach(function (v) {
     var end = parseFloat(v.getAttribute('data-end'));
-    v.addEventListener('timeupdate', function () { if (v.currentTime >= end) v.currentTime = 0; });
+    var from = parseFloat(v.getAttribute('data-start')) || 0;
+    v.addEventListener('timeupdate', function () {
+      if (v.currentTime < end) return;
+      var wasPlaying = !v.paused;
+      v.currentTime = from;
+      if (wasPlaying) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    });
   });
   if (reduce) vids.forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
 
