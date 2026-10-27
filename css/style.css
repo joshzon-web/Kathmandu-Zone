@@ -56,10 +56,8 @@ address { font-style: normal; }
 /* --- Surfaces ------------------------------------------------------------ */
 .dark {
   color: rgba(243, 235, 220, .82);
-  background-color: var(--night);
-  background-image: var(--grain-dark), var(--clouds-dark);
-  background-size: 240px 240px, 100% 100%;
-  background-repeat: repeat, no-repeat;
+  background-color: var(--black);
+  background-image: var(--grain-dark);
 }
 .dark.deep { background-color: var(--black); }
 .dark h1, .dark h2, .dark h3 { color: var(--ivory); }
@@ -264,15 +262,14 @@ address { font-style: normal; }
 /* portrait video in a framed panel: thin gold inset line, echoing the menu's borders */
 .video-frame {
   position: relative; width: min(440px, 100%); aspect-ratio: 4 / 5; margin-inline: auto;
-  overflow: hidden; background: var(--night-2);
-  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8);
+  overflow: hidden; background: var(--black);
 }
 .video-frame video, .video-frame img { width: 100%; height: 100%; object-fit: cover; }
 .video-frame video { object-position: 50% 62%; }
 .video-frame::after {
   content: ""; position: absolute; inset: 14px; border: 1px solid rgba(228, 201, 143, .55); pointer-events: none;
 }
-.wide-frame { position: relative; overflow: hidden; aspect-ratio: 5 / 4; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8); }
+.wide-frame { position: relative; overflow: hidden; aspect-ratio: 5 / 4; }
 .wide-frame img { width: 100%; height: 112%; object-fit: cover; will-change: transform; }
 .inset-img {
   position: absolute; width: 44%; right: -6%; bottom: -12%; aspect-ratio: 1; overflow: hidden;
@@ -285,7 +282,7 @@ address { font-style: normal; }
 .dishes-link { text-align: center; margin-top: 40px; }
 .dishes-link + .feature { margin-top: clamp(90px, 10vw, 140px); }
 .dish { color: inherit; }
-.dish-img { aspect-ratio: 4 / 5; overflow: hidden; margin-bottom: 20px; background: var(--night-2); }
+.dish-img { aspect-ratio: 4 / 5; overflow: hidden; margin-bottom: 20px; background: var(--black); }
 .dish-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease), filter 1.4s var(--ease); filter: brightness(.92); }
 .dish:hover .dish-img img { transform: scale(1.05); filter: brightness(1); }
 .dish h3 { font-size: 26px; font-weight: 400; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
@@ -335,7 +332,7 @@ address { font-style: normal; }
 .banquet-ctas { display: flex; flex-wrap: wrap; gap: 26px; align-items: center; }
 
 /* --- Book (placeholder) -------------------------------------------------- */
-.book { position: relative; overflow: hidden; text-align: center; color: rgba(243, 235, 220, .8); background: var(--black); }
+.book { position: relative; overflow: hidden; color: rgba(243, 235, 220, .8); background: var(--black); }
 .book-bg { position: absolute; inset: -10% 0; }
 .book-bg img { width: 100%; height: 100%; object-fit: cover; opacity: .32; will-change: transform; }
 .book::before {
@@ -345,7 +342,7 @@ address { font-style: normal; }
 .book .container { position: relative; z-index: 2; }
 .book h2 { color: var(--ivory); }
 .book-panel {
-  max-width: 640px; margin: 44px auto 0; padding: 40px clamp(24px, 5vw, 56px);
+  max-width: 640px; margin: 36px auto 0; padding: 40px clamp(24px, 5vw, 56px);
   border: 1px solid var(--line-dark); background: rgba(12, 10, 7, .55); backdrop-filter: blur(4px);
 }
 .book-panel p { margin-bottom: 28px; }
@@ -355,7 +352,12 @@ address { font-style: normal; }
 .tan { position: relative; color: #fff; background: #cdbc9e url("../images/testimonials-bg.webp") center / cover no-repeat; }
 .tan::before { content: ""; position: absolute; inset: 0; background: rgba(70, 52, 26, .14); pointer-events: none; }
 .tan .container { position: relative; }
-.testimonials { padding: clamp(80px, 9vw, 120px) 0; }
+.testimonials {
+  position: relative; color: #fff; padding: clamp(80px, 9vw, 120px) 0;
+  background: var(--black) url("../images/testimonials-dark.webp") center / cover no-repeat;
+}
+.testimonials .container { position: relative; }
+.testimonials .t-rule { background: var(--gold); }
 .testimonials h2 { font-size: clamp(36px, 4.4vw, 54px); font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: #fff; }
 .t-rule { display: block; width: 64px; height: 3px; background: #fff; margin: 26px auto 0; }
 .testimonials h2 { text-shadow: 0 1px 12px rgba(60, 42, 18, .25); }
@@ -366,6 +368,10 @@ address { font-style: normal; }
 
 /* --- Find us (after Kabab Zarzour) -------------------------------------- */
 .find-us { padding: clamp(90px, 10vw, 130px) 0 0; text-align: center; }
+#banqueting + .find-us { padding-top: 0; }
+#banqueting + .find-us .container { border-top: 1px solid var(--line-light); padding-top: clamp(80px, 9vw, 120px); }
+#signature + .testimonials { padding-top: 0; }
+#signature + .testimonials .container { border-top: 1px solid var(--line-dark); padding-top: clamp(80px, 9vw, 110px); }
 .find-address { font-family: var(--serif); font-size: clamp(26px, 2.8vw, 34px); line-height: 1.25; color: var(--ink); margin: 6px 0 16px; }
 .find-cols { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 900px; margin: 54px auto 0; }
 .find-col { padding: 10px 24px; }
@@ -476,10 +482,10 @@ address { font-style: normal; }
 .tag.v { color: #9fb57a; }
 .tag.new { color: #e08a6b; }
 .tag.sig { color: var(--gold); }
-.menu-cta { padding: 90px 0 100px; text-align: center; }
+.menu-cta { padding: 80px 0 90px; text-align: center; }
 .menu-cta .title { margin-bottom: 30px; }
 .menu-cta .apps { margin-top: 22px; }
-.allergy { font-size: 13.5px; color: rgba(243, 235, 220, .5); max-width: 640px; margin: 60px auto 0; }
+.allergy { font-size: 15px; color: rgba(243, 235, 220, .55); max-width: 640px; margin: 28px auto 0; }
 
 /* ==========================================================================
    Responsive
@@ -510,7 +516,7 @@ address { font-style: normal; }
   .header-actions { display: none; }
   .nav {
     position: fixed; inset: var(--header-h) 0 0; flex-direction: column; justify-content: center; align-items: center; gap: 30px;
-    background-color: var(--black); background-image: var(--grain-dark), var(--clouds-dark);
+    background-color: var(--black); background-image: var(--grain-dark);
     opacity: 0; visibility: hidden; transition: opacity .5s var(--ease), visibility .5s;
   }
   .nav a { font-family: var(--serif); font-size: 34px; letter-spacing: .04em; text-transform: none; }

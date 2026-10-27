@@ -180,6 +180,11 @@
     var spyTick = false;
     window.addEventListener('scroll', function () { if (!spyTick) { spyTick = true; requestAnimationFrame(function () { spy(); spyTick = false; }); } }, { passive: true });
     spy();
-    if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function () { t.scrollIntoView(); }, 50); }
+    /* the menu is rendered by script, so the browser's own jump to #hash lands too early: redo it */
+    if (location.hash) {
+      var jumpTo = function () { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView({ behavior: 'instant' }); };
+      setTimeout(jumpTo, 50);
+      window.addEventListener('load', function () { setTimeout(jumpTo, 50); });
+    }
   }
 })();
