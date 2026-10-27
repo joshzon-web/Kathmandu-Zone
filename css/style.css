@@ -356,10 +356,9 @@ address { font-style: normal; }
 .tan::before { content: ""; position: absolute; inset: 0; background: rgba(70, 52, 26, .14); pointer-events: none; }
 .tan .container { position: relative; }
 .testimonials { padding: clamp(80px, 9vw, 120px) 0; }
-.they-say { margin: 0 0 6px; font-size: 15px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
 .testimonials h2 { font-size: clamp(36px, 4.4vw, 54px); font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: #fff; }
 .t-rule { display: block; width: 64px; height: 3px; background: #fff; margin: 26px auto 0; }
-.testimonials .text-shadow, .testimonials h2, .they-say { text-shadow: 0 1px 12px rgba(60, 42, 18, .25); }
+.testimonials h2 { text-shadow: 0 1px 12px rgba(60, 42, 18, .25); }
 .reviews-widget { margin-top: 44px; min-height: 120px; }
 .btn.light { --b: rgba(255, 255, 255, .85); color: #fff; }
 .btn.light::before { background: #fff; }
