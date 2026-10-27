@@ -361,7 +361,7 @@ address { font-style: normal; }
 .testimonials h2 { font-size: clamp(36px, 4.4vw, 54px); font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: #fff; }
 .t-rule { display: block; width: 64px; height: 3px; background: #fff; margin: 26px auto 0; }
 .testimonials h2 { text-shadow: 0 1px 12px rgba(60, 42, 18, .25); }
-.reviews-widget { margin-top: 44px; min-height: 120px; }
+.reviews-widget { margin-top: 44px; min-height: 120px; text-align: left; }
 .btn.light { --b: rgba(255, 255, 255, .85); color: #fff; }
 .btn.light::before { background: #fff; }
 .btn.light:hover, .btn.light:focus-visible { color: var(--ink); }
