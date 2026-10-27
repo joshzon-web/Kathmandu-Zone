@@ -96,22 +96,17 @@
     update();
   }
 
-  /* Reviews widget renders in its own shadow DOM: restyle its cards to sit on
-     the tan testimonials band (white text, no boxes), once it has loaded. */
+  /* Reviews widget renders in its own shadow DOM: keep its layout, recolour the
+     cards as black boxes with white text for the dark testimonials band. */
   var emr = document.querySelector('emr-simple-carousel');
   if (emr) {
     var emrCss = [
-      ':host{font-family:"EB Garamond",Georgia,serif!important}',
       '.title,.subtitle{display:none!important}',
-      '.slider{width:340px!important;min-width:340px!important;min-height:210px!important}',
-      '.slider-container{background:transparent!important;border:0!important;box-shadow:none!important;padding:1.25rem 1.75rem 4rem!important;text-align:center;border-left:1px solid rgba(255,255,255,.45)!important}',
-      '.review-message{color:#fff!important;font-family:"EB Garamond",Georgia,serif!important;font-size:18px!important;line-height:1.5!important;-webkit-line-clamp:4!important;max-height:calc(1.5em * 4)!important}',
-      '.review-stars{justify-content:center}.review-stars>svg{color:#fff!important}',
-      '.review-card-stars-and-source{justify-content:center!important}',
-      '.review-author-info-wrapper{justify-content:center}',
-      '.review-author-name-wrapper{flex:0 1 auto!important}',
-      '.review-author,.review-author *{color:#fff!important;font-family:"EB Garamond",Georgia,serif!important;letter-spacing:.12em;text-transform:uppercase;font-size:13px!important}',
-      '.emr-w-simple-list-review-time{color:rgba(255,255,255,.75)!important;font-family:"EB Garamond",Georgia,serif!important}'
+      '.slider-container{background:#15120d!important;border:1px solid rgba(201,164,92,.35)!important;box-shadow:none!important}',
+      '.review-message{color:#fff!important}',
+      '.review-stars>svg{color:#e4c98f!important}',
+      '.review-author,.review-author *{color:rgba(255,255,255,.75)!important}',
+      '.emr-w-simple-list-review-time{color:rgba(255,255,255,.55)!important}'
     ].join('');
     var styleEmr = function () {
       var root = emr.shadowRoot;
