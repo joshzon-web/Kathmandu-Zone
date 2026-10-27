@@ -1,6 +1,6 @@
 /* Kathmandu Zone menu transcribed from "Kathmandu Zone Menu.pdf".
    Edit prices / dishes here; menu.html renders from this file.
-   tags: v = vegetarian, new = new dish, sig = house special / recommended */
+   tags: v = vegetarian, new = new on the printed menu, sig = flagged on the printed menu (chef's special / recommended / our special) */
 window.KZ_MENU = [
   {
     id: 'momo', title: 'Momo', kicker: 'Freshly made',
@@ -86,7 +86,7 @@ window.KZ_MENU = [
     id: 'soups', title: 'Thukpa & Soups', kicker: 'Mountain comfort',
     items: [
       { name: 'Himalayan Thukpa', price: '8.95 / 9.95', desc: 'A warm, soul-soothing mountain noodle soup with fragrant spices. Veg / chicken.' },
-      { name: 'Momo Thukpa', price: '10.95', desc: 'Noodles in a light, aromatic broth topped with two steamed momo. Veg / chicken.', tags: ['sig'] },
+      { name: 'Momo Thukpa', price: '10.95', desc: 'Noodles in a light, aromatic broth topped with two steamed momo. Veg / chicken.' },
       { name: 'Tom Yum Soup', price: '7.95 / 8.95', desc: 'Classic Thai soup, spicy, sour and savoury. Veg / chicken.' },
       { name: 'Hot & Sour Soup', price: '8.95 / 9.95', desc: 'Spicy, tangy and warming. Veg / chicken.' },
       { name: 'Manchow Soup', price: '8.95 / 9.95', desc: 'A spicy, warming Indo-Chinese soup. Veg / chicken.' },
@@ -99,7 +99,7 @@ window.KZ_MENU = [
       { title: 'From the tandoor', items: [
         { name: 'Tikka Sizzler', price: '12.50 / 12.95 / 13.95', desc: 'Smoky, tender tikka served on a sizzling platter. Paneer / chicken / lamb.' },
         { name: 'Tandoori Chicken', price: '10.95 / 18.95', desc: 'Marinated chicken grilled in the tandoor, served sizzling. Half / full. Make it peri peri +£1.' },
-        { name: 'Tandoori Mixed Grill', price: '20.95', desc: 'Chicken tikka, lamb tikka, tandoori chicken and tandoori wings, with butter naan.', tags: ['sig'] },
+        { name: 'Tandoori Mixed Grill', price: '20.95', desc: 'Chicken tikka, lamb tikka, tandoori chicken and tandoori wings, with butter naan.' },
         { name: 'Hanging Kebab', price: 'from 13.95', desc: 'Smoky tandoori kebabs on a hanging skewer with chutney and peri peri fries. Paneer 13.95 · chicken 14.95 · lamb 15.95 · prawn 16.95.' }
       ] },
       { title: 'Wings on fire · 6 pcs', items: [
@@ -108,7 +108,7 @@ window.KZ_MENU = [
         { name: 'KTM Special Wings', price: '9.50', desc: 'Spicy wings coated in our house special sauce.' },
         { name: 'Thai Chilli Wings', price: '9.50', desc: 'Wings tossed in a spicy Thai chilli-lime sauce.' },
         { name: 'Chilli Garlic Wings', price: '9.50', desc: 'Grilled wings tossed in a tangy chilli-garlic sauce.' },
-        { name: 'Wings Platter', price: '26.95', desc: 'Twenty wings in five flavours, served sizzling hot to share.', tags: ['sig'] }
+        { name: 'Wings Platter', price: '26.95', desc: 'Twenty wings in five flavours, served sizzling hot to share.' }
       ] }
     ]
   },
@@ -118,8 +118,8 @@ window.KZ_MENU = [
     groups: [
       { title: 'Lamb', items: [
         { name: 'Kathmandu Zone Lamb', price: '12.95', desc: 'Lamb with bell peppers in a rich tomato-onion gravy and our signature KTM house spices.', tags: ['sig'] },
-        { name: 'Himalayan Lamb', price: '12.95', desc: 'Lamb simmered with mixed lentils and traditional Himalayan spices.' },
-        { name: 'Karahi Lamb', price: '12.95', desc: 'A bold, spicy curry in a thick tomato sauce with herbs.' },
+        { name: 'Himalayan Lamb', price: '12.95', desc: 'Lamb simmered with mixed lentils and traditional Himalayan spices.', tags: ['sig'] },
+        { name: 'Karahi Lamb', price: '12.95', desc: 'A bold, spicy curry in a thick tomato sauce with herbs.', tags: ['sig'] },
         { name: 'Lamb Bhuna', price: '12.95', desc: 'Slow-cooked in a rich, intensely spiced gravy, reduced until thick.' },
         { name: 'Lamb Jalfrezi', price: '12.95', desc: 'Stir-fried with bell peppers, onion and tomato in a tangy, spicy sauce.' },
         { name: 'Lamb Kashmiri', price: '12.95', desc: 'A creamy, mildly spiced sauce with Kashmiri flavours.' },
@@ -128,7 +128,7 @@ window.KZ_MENU = [
         { name: 'Balti Lamb', price: '12.95', desc: 'Lamb in a rich, spiced gravy with traditional house seasonings.' }
       ] },
       { title: 'Chicken', items: [
-        { name: 'Kathmandu Zone Chicken', price: '11.95', desc: 'House special curry with chicken breast and aromatic spices.', tags: ['sig'] },
+        { name: 'Kathmandu Zone Chicken', price: '11.95', desc: 'House special curry with chicken breast and aromatic spices.' },
         { name: 'Himalayan Chicken', price: '11.95', desc: 'Chicken and mixed lentils in Himalayan spices.' },
         { name: 'Karahi Chicken', price: '11.95', desc: 'Spiced chicken in a rich tomato gravy.' },
         { name: 'Butter Chicken', price: '11.95', desc: 'Tandoori chicken in a rich, creamy tomato-butter sauce.' },
@@ -137,13 +137,13 @@ window.KZ_MENU = [
         { name: 'Saag Chicken', price: '11.95', desc: 'Chicken in a spiced spinach gravy.' }
       ] },
       { title: 'Vegetarian', items: [
-        { name: 'Paneer Butter Masala', price: '11.95', desc: 'Paneer in a creamy tomato gravy with butter and aromatic spices.', tags: ['v'] },
+        { name: 'Paneer Butter Masala', price: '11.95', desc: 'Paneer in a creamy tomato gravy with butter and aromatic spices.', tags: ['v', 'sig'] },
         { name: 'Karahi Paneer', price: '11.95', desc: 'Paneer in a rich tomato gravy with bell peppers.', tags: ['v'] },
-        { name: 'Malai Saag Paneer', price: '11.95', desc: 'Soft paneer in a creamy, mildly spiced spinach gravy.', tags: ['v'] },
+        { name: 'Malai Saag Paneer', price: '11.95', desc: 'Soft paneer in a creamy, mildly spiced spinach gravy.', tags: ['v', 'sig'] },
         { name: 'Paneer Jalfrezi', price: '11.95', desc: 'Paneer, peppers and onions in a tangy, spicy sauce.', tags: ['v'] },
         { name: 'Mutter Paneer', price: '11.95', desc: 'Paneer and green peas in a spiced tomato-onion gravy.', tags: ['v'] },
         { name: 'Malai Kofta', price: '11.95', desc: 'Paneer and potato dumplings in a rich, creamy tomato gravy.', tags: ['v'] },
-        { name: 'Mix Vegetable', price: '9.95', desc: 'Seasonal vegetables in a tomato-onion gravy.', tags: ['v'] },
+        { name: 'Mix Vegetable', price: '9.95', desc: 'Seasonal vegetables in a tomato-onion gravy.', tags: ['v', 'sig'] },
         { name: 'Bhindi Bhaji', price: '9.95', desc: 'Okra cooked with onion, tomato and traditional spices.', tags: ['v'] },
         { name: 'Aloo Gobi', price: '9.95', desc: 'Himalayan style, with potato, cauliflower, timur, smoked chilli and coriander.', tags: ['v'] },
         { name: 'Daal Makhani', price: '9.95', desc: 'Black lentils and kidney beans slow-cooked in a creamy gravy.', tags: ['v'] },
@@ -179,7 +179,7 @@ window.KZ_MENU = [
         { name: 'Chilli Garlic Fried Rice', price: '7.95 – 9.95', desc: 'Fresh garlic, chilli and vegetables. Veg / chicken / prawn.' },
         { name: 'Szechuan Fried Rice', price: '7.95 – 9.95', desc: 'With vegetables and a bold, spicy Szechuan sauce. Veg / chicken / prawn.' },
         { name: 'Thai Chilli Fried Rice', price: '8.95 – 10.95', desc: 'Thai chilli sauce, fresh herbs and vegetables. Veg / chicken / prawn.' },
-        { name: 'KTM Special Fried Rice', price: '8.95 – 10.95', desc: 'Our signature fried rice with vegetables, egg and house seasonings. Veg / chicken / prawn.', tags: ['sig'] }
+        { name: 'KTM Special Fried Rice', price: '8.95 – 10.95', desc: 'Our signature fried rice with vegetables, egg and house seasonings. Veg / chicken / prawn.' }
       ] },
       { title: 'Naan & roti', items: [
         { name: 'Butter Naan', price: '3.50', desc: 'Soft and fluffy, brushed with butter.', tags: ['v'] },

@@ -165,7 +165,7 @@
   var menuRoot = document.getElementById('menu-root');
   if (menuRoot && window.KZ_MENU) {
     var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
-    var tagLabel = { v: 'V', new: 'New', sig: 'Chef’s pick' };
+    var tagLabel = { v: 'V', new: 'New', sig: 'Chef’s special' };
     var itemHTML = function (it) {
       var tags = (it.tags || []).map(function (t) { return '<span class="tag ' + t + '">' + tagLabel[t] + '</span>'; }).join('');
       return '<div class="item"><div class="item-top"><span class="item-name">' + esc(it.name) + tags + '</span>' +
