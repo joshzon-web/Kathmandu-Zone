@@ -103,7 +103,8 @@
     var emrCss = [
       ':host{text-align:left!important}',
       '.slider-container{text-align:left!important}',
-      '.review-stars,.review-card-stars-and-source,.review-author-info-wrapper{justify-content:flex-start!important}',
+      '.review-stars,.review-author-info-wrapper{justify-content:flex-start!important}',
+      '.review-card-stars-and-source{justify-content:space-between!important}',
       '.title,.subtitle{display:none!important}',
       '.slider-container{background:#15120d!important;border:1px solid rgba(201,164,92,.35)!important;box-shadow:none!important}',
       '.review-message{color:#fff!important}',
