@@ -344,10 +344,13 @@ address { font-style: normal; }
 .book .container { position: relative; z-index: 2; }
 .book h2 { color: var(--ivory); }
 .book-panel {
-  max-width: 640px; margin: 36px auto 0; padding: 40px clamp(24px, 5vw, 56px);
-  border: 1px solid var(--line-dark); background: rgba(12, 10, 7, .55); backdrop-filter: blur(4px);
+  max-width: 620px; margin: 0 auto; padding: clamp(20px, 3vw, 32px) clamp(12px, 3vw, 28px);
+  background-color: var(--ivory); background-image: var(--fibres), var(--grain);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .85);
 }
 .book-panel p { margin-bottom: 28px; }
+.book-call { margin: 26px 0 0; font-size: 16px; color: rgba(243, 235, 220, .7); }
+.book-call a { color: var(--gold-light); border-bottom: 1px solid rgba(228, 201, 143, .5); }
 
 /* --- Reviews (after the testimonials band on the old site) ------------- */
 /* tan sketch band (from the old site), used by Order and Reviews */
