@@ -199,15 +199,6 @@ address { font-style: normal; }
 }
 .hero-bar a:hover { color: var(--gold-light); }
 
-.scroll-cue {
-  position: absolute; left: 50%; bottom: 74px; z-index: 3; width: 1px; height: 46px; overflow: hidden;
-  background: rgba(201, 164, 92, .25);
-}
-.scroll-cue::after {
-  content: ""; position: absolute; left: 0; top: -50%; width: 1px; height: 50%; background: var(--gold-light);
-  animation: cue 2.4s var(--ease) infinite;
-}
-@keyframes cue { to { top: 100%; } }
 
 /* --- Ornaments ----------------------------------------------------------- */
 .skyline { width: min(560px, 90%); margin: 0 auto 46px; color: var(--gold-deep); }
@@ -553,7 +544,6 @@ address { font-style: normal; }
   .find-col + .find-col { border-left: 0; border-top: 1px solid var(--line-light); }
   .menu-list { grid-template-columns: 1fr; }
   .hero-bar { display: none; }
-  .scroll-cue { bottom: 30px; }
   .call-bar {
     display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
     background: var(--black); border-top: 1px solid var(--line-dark);
