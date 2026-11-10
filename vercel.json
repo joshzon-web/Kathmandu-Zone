@@ -2,25 +2,25 @@
   "redirects": [
     { "source": "/:path*", "has": [{ "type": "host", "value": "hounslow.kathmanduzone.com" }], "destination": "https://www.kathmanduzone.com/", "permanent": true },
 
-    { "source": "/about-us/:path*", "destination": "/#story", "permanent": true },
-    { "source": "/contact-us/:path*", "destination": "/#find-us", "permanent": true },
-    { "source": "/restaurant-home/:path*", "destination": "/", "permanent": true },
+    { "source": "/about-us(/.*)?", "destination": "/#story", "permanent": true },
+    { "source": "/contact-us(/.*)?", "destination": "/#find-us", "permanent": true },
+    { "source": "/restaurant-home(/.*)?", "destination": "/", "permanent": true },
 
-    { "source": "/our-menu/:path*", "destination": "/menu.html", "permanent": true },
-    { "source": "/menu/:path*", "destination": "/menu.html", "permanent": true },
-    { "source": "/product-category/:path*", "destination": "/menu.html", "permanent": true },
-    { "source": "/product/:path*", "destination": "/menu.html", "permanent": true },
-    { "source": "/shop/:path*", "destination": "/menu.html", "permanent": true },
-    { "source": "/shop-2/:path*", "destination": "/menu.html", "permanent": true },
+    { "source": "/our-menu(/.*)?", "destination": "/menu.html", "permanent": true },
+    { "source": "/menu(/.*)?", "destination": "/menu.html", "permanent": true },
+    { "source": "/product-category(/.*)?", "destination": "/menu.html", "permanent": true },
+    { "source": "/product(/.*)?", "destination": "/menu.html", "permanent": true },
+    { "source": "/shop(/.*)?", "destination": "/menu.html", "permanent": true },
+    { "source": "/shop-2(/.*)?", "destination": "/menu.html", "permanent": true },
 
-    { "source": "/cart/:path*", "destination": "/menu.html#order", "permanent": true },
-    { "source": "/checkout/:path*", "destination": "/menu.html#order", "permanent": true },
-    { "source": "/my-account/:path*", "destination": "/menu.html#order", "permanent": true },
+    { "source": "/cart(/.*)?", "destination": "/menu.html#order", "permanent": true },
+    { "source": "/checkout(/.*)?", "destination": "/menu.html#order", "permanent": true },
+    { "source": "/my-account(/.*)?", "destination": "/menu.html#order", "permanent": true },
 
-    { "source": "/feed/:path*", "destination": "/", "permanent": true },
-    { "source": "/comments/feed/:path*", "destination": "/", "permanent": true },
-    { "source": "/wp-content/:path*", "destination": "/", "permanent": true },
-    { "source": "/wp-admin/:path*", "destination": "/", "permanent": true },
+    { "source": "/feed(/.*)?", "destination": "/", "permanent": true },
+    { "source": "/comments/feed(/.*)?", "destination": "/", "permanent": true },
+    { "source": "/wp-content(/.*)?", "destination": "/", "permanent": true },
+    { "source": "/wp-admin(/.*)?", "destination": "/", "permanent": true },
     { "source": "/wp-login.php", "destination": "/", "permanent": true }
   ]
 }
