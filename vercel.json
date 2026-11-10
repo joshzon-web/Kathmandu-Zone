@@ -1,26 +1,34 @@
 {
   "redirects": [
-    { "source": "/:path*", "has": [{ "type": "host", "value": "hounslow.kathmanduzone.com" }], "destination": "https://www.kathmanduzone.com/", "permanent": true },
-
-    { "source": "/about-us(/.*)?", "destination": "/#story", "permanent": true },
-    { "source": "/contact-us(/.*)?", "destination": "/#find-us", "permanent": true },
-    { "source": "/restaurant-home(/.*)?", "destination": "/", "permanent": true },
-
-    { "source": "/our-menu(/.*)?", "destination": "/menu.html", "permanent": true },
-    { "source": "/menu(/.*)?", "destination": "/menu.html", "permanent": true },
-    { "source": "/product-category(/.*)?", "destination": "/menu.html", "permanent": true },
-    { "source": "/product(/.*)?", "destination": "/menu.html", "permanent": true },
-    { "source": "/shop(/.*)?", "destination": "/menu.html", "permanent": true },
-    { "source": "/shop-2(/.*)?", "destination": "/menu.html", "permanent": true },
-
-    { "source": "/cart(/.*)?", "destination": "/menu.html#order", "permanent": true },
-    { "source": "/checkout(/.*)?", "destination": "/menu.html#order", "permanent": true },
-    { "source": "/my-account(/.*)?", "destination": "/menu.html#order", "permanent": true },
-
-    { "source": "/feed(/.*)?", "destination": "/", "permanent": true },
-    { "source": "/comments/feed(/.*)?", "destination": "/", "permanent": true },
-    { "source": "/wp-content(/.*)?", "destination": "/", "permanent": true },
-    { "source": "/wp-admin(/.*)?", "destination": "/", "permanent": true },
-    { "source": "/wp-login.php", "destination": "/", "permanent": true }
+    {"source": "/booking(/.*)?", "has": [{"type": "host", "value": "hounslow.kathmanduzone.com"}], "destination": "https://reservations.redrockrep.co.uk/book/kathmandu-zone", "permanent": true},
+    {"source": "/:path*", "has": [{"type": "host", "value": "hounslow.kathmanduzone.com"}], "destination": "https://www.kathmanduzone.com/menu.html", "permanent": true},
+    {"source": "/booking(/.*)?", "destination": "https://reservations.redrockrep.co.uk/book/kathmandu-zone", "permanent": true},
+    {"source": "/book(/.*)?", "destination": "https://reservations.redrockrep.co.uk/book/kathmandu-zone", "permanent": true},
+    {"source": "/book-now(/.*)?", "destination": "https://reservations.redrockrep.co.uk/book/kathmandu-zone", "permanent": true},
+    {"source": "/book-a-table(/.*)?", "destination": "https://reservations.redrockrep.co.uk/book/kathmandu-zone", "permanent": true},
+    {"source": "/book-table(/.*)?", "destination": "https://reservations.redrockrep.co.uk/book/kathmandu-zone", "permanent": true},
+    {"source": "/table-booking(/.*)?", "destination": "https://reservations.redrockrep.co.uk/book/kathmandu-zone", "permanent": true},
+    {"source": "/reservation(/.*)?", "destination": "https://reservations.redrockrep.co.uk/book/kathmandu-zone", "permanent": true},
+    {"source": "/reservations(/.*)?", "destination": "https://reservations.redrockrep.co.uk/book/kathmandu-zone", "permanent": true},
+    {"source": "/order-online(/.*)?", "destination": "/menu.html#order", "permanent": true},
+    {"source": "/order-now(/.*)?", "destination": "/menu.html#order", "permanent": true},
+    {"source": "/order(/.*)?", "destination": "/menu.html#order", "permanent": true},
+    {"source": "/about-us(/.*)?", "destination": "/#story", "permanent": true},
+    {"source": "/contact-us(/.*)?", "destination": "/#find-us", "permanent": true},
+    {"source": "/restaurant-home(/.*)?", "destination": "/", "permanent": true},
+    {"source": "/our-menu(/.*)?", "destination": "/menu.html", "permanent": true},
+    {"source": "/menu(/.*)?", "destination": "/menu.html", "permanent": true},
+    {"source": "/product-category(/.*)?", "destination": "/menu.html", "permanent": true},
+    {"source": "/product(/.*)?", "destination": "/menu.html", "permanent": true},
+    {"source": "/shop(/.*)?", "destination": "/menu.html", "permanent": true},
+    {"source": "/shop-2(/.*)?", "destination": "/menu.html", "permanent": true},
+    {"source": "/cart(/.*)?", "destination": "/menu.html#order", "permanent": true},
+    {"source": "/checkout(/.*)?", "destination": "/menu.html#order", "permanent": true},
+    {"source": "/my-account(/.*)?", "destination": "/menu.html#order", "permanent": true},
+    {"source": "/feed(/.*)?", "destination": "/", "permanent": true},
+    {"source": "/comments/feed(/.*)?", "destination": "/", "permanent": true},
+    {"source": "/wp-content(/.*)?", "destination": "/", "permanent": true},
+    {"source": "/wp-admin(/.*)?", "destination": "/", "permanent": true},
+    {"source": "/wp-login.php", "destination": "/", "permanent": true}
   ]
 }
