@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "hounslow.kathmanduzone.com" }], "destination": "https://www.kathmanduzone.com/", "permanent": true },
+
+    { "source": "/about-us/:path*", "destination": "/#story", "permanent": true },
+    { "source": "/contact-us/:path*", "destination": "/#find-us", "permanent": true },
+    { "source": "/restaurant-home/:path*", "destination": "/", "permanent": true },
+
+    { "source": "/our-menu/:path*", "destination": "/menu.html", "permanent": true },
+    { "source": "/menu/:path*", "destination": "/menu.html", "permanent": true },
+    { "source": "/product-category/:path*", "destination": "/menu.html", "permanent": true },
+    { "source": "/product/:path*", "destination": "/menu.html", "permanent": true },
+    { "source": "/shop/:path*", "destination": "/menu.html", "permanent": true },
+    { "source": "/shop-2/:path*", "destination": "/menu.html", "permanent": true },
+
+    { "source": "/cart/:path*", "destination": "/menu.html#order", "permanent": true },
+    { "source": "/checkout/:path*", "destination": "/menu.html#order", "permanent": true },
+    { "source": "/my-account/:path*", "destination": "/menu.html#order", "permanent": true },
+
+    { "source": "/feed/:path*", "destination": "/", "permanent": true },
+    { "source": "/comments/feed/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-content/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-admin/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-login.php", "destination": "/", "permanent": true }
+  ]
+}
